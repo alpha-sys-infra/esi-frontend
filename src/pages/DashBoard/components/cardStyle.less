@@ -1,0 +1,52 @@
+.dashboard-card-wrapper{
+    margin-bottom:30px;
+    .dashboard-card-title-box{
+        text-align: center;
+        height:60px;
+        .num-box{
+            position: relative;
+            display:inline-block;
+            font-size:26px;
+            line-height: 1;
+            &.precent-mode::after{
+                content:"%";
+                position: absolute;
+                top:-2px;
+                right:0;
+                transform: translate(100%);
+                font-size:18px;
+                color: inherit;
+                display: block;
+                z-index: 1;
+            }
+        }
+    }
+    .dashboard-list{
+        height:280px;
+        .list-item-title{
+            max-width:180px;
+            margin: 0;
+            line-height: 1;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .ant-list-item-action{
+            margin-left:24px;
+        }
+    }
+}
+.dashboard-card{
+    margin:0 auto;
+    .btn-box{
+        height:20px;
+        width:100%;
+        text-align: center;
+    }
+    .ant-card-head-title{
+        text-align: center;
+    }
+    .ant-list-split .ant-list-item{
+        justify-content: space-between;
+    }
+}
