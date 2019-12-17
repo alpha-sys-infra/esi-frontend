@@ -28,8 +28,8 @@ export default function (state, action) {
             return {
                 ...state,
                 currentModule: action.currentModule,
-                accessMenu: action.accessMenu,
-                openAccessMenu: action.openAccessMenu,
+                accessMenu: [...action.accessMenu,{name:"menu"}],
+                openAccessMenu: [...action.openAccessMenu,{name:"menu",title:"配置项目菜单"}],
                 moduleMenu: action.moduleMenu,
                 moduleList: action.moduleList
             }

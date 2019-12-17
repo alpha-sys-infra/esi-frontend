@@ -15,6 +15,7 @@ class AuthorizedRoute extends React.Component {
                 hasPermission = false;
             }
         }
+        console.log("hasPremission", hasPremission,openAccessMenu);
         return (
             <Route {...props} render={props => {
                 return hasPermission

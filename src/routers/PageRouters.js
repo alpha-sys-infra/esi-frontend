@@ -5,9 +5,9 @@ import Page404 from '@/pages/Page404';
 let Layout = null;
 //process.env.REACT_APP_LAYOUT_MODE不在definePlugin里配，两个都会打包
 if (process.env.REACT_APP_LAYOUT_MODE==='tab') {
-    Layout = require('@/layout/TabMode').default;
+    Layout = require('@/layout/TabMode.jsx').default;
 } else {
-    Layout = require('@/layout/App').default;
+    Layout = require('@/layout/App.jsx').default;
 }
 
 export default () => (
