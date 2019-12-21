@@ -5,32 +5,8 @@ const Menu = Loadable({
     loader: () => import('@/pages/Menu'),
     loading: ContentLoader
 });
-const Function = Loadable({
-    loader: () => import('@/pages/Function'),
-    loading: ContentLoader
-});
-const Role = Loadable({
-    loader: () => import('@/pages/role'),
-    loading: ContentLoader
-});
 const Home = Loadable({
     loader: () => import('@/pages/Home'),
-    loading: ContentLoader
-});
-const RolePermission = Loadable({
-    loader: () => import('@/pages/rolePermission'),
-    loading: ContentLoader
-});
-const RoleUser = Loadable({
-    loader: () => import('@/pages/roleUser'),
-    loading: ContentLoader
-});
-const UserRole = Loadable({
-    loader: () => import('@/pages/userRole'),
-    loading: ContentLoader
-});
-const User = Loadable({
-    loader: () => import('@/pages/user'),
     loading: ContentLoader
 });
 const Page404 = Loadable({
@@ -45,91 +21,56 @@ const RequestLog = Loadable({
     loader: () => import('@/pages/RequestLog'),
     loading: ContentLoader
 });
-const Department = Loadable({
-    loader: () => import('@/pages/Department/index'),
+const ComputeResource = Loadable({
+    loader: () => import('@/pages/sysManagement/resourceManagement/computeResource/index'),
     loading: ContentLoader
 });
-const DashBoard = Loadable({
-    loader: () => import('@/pages/DashBoard/index'),
+const NodesMon = Loadable({
+    loader: () => import('@/pages/sysManagement/resourceManagement/nodesMon/index'),
     loading: ContentLoader
 });
-const NodesList = Loadable({
-    loader: () => import('@/pages/NodesList/index'),
+const ServicesMon = Loadable({
+    loader: () => import('@/pages/sysManagement/resourceManagement/servicesMon/index'),
     loading: ContentLoader
 });
-const ServerServiceList = Loadable({
-    loader: () => import('@/pages/ServerServiceList/index'),
-    loading: ContentLoader
-});
-const NetworkingList = Loadable({
-    loader: () => import('@/pages/NetworkingList/index'),
+const NetworksMon = Loadable({
+    loader: () => import('@/pages/sysManagement/resourceManagement/networksMon/index'),
     loading: ContentLoader
 });
 const UserInfo = Loadable({
-    loader: () => import('@/pages/UserInfo/index'),
+    loader: () => import('@/pages/omniIdentity/UserInfo/index'),
     loading: ContentLoader
 });
 const ServiceIndex = Loadable({
-    loader: () => import('@/pages/Service/index'),
+    loader: () => import('@/pages/servManagement/index'),
     loading: ContentLoader
 });
 const ServiceManage = Loadable({
-    loader: () => import('@/pages/Service/manage'),
+    loader: () => import('@/pages/servManagement/manage'),
     loading: ContentLoader
 });
 const ServiceImage = Loadable({
-    loader: () => import('@/pages/Service/image'),
+    loader: () => import('@/pages/servManagement/image'),
     loading: ContentLoader
 });
 const ServicePort = Loadable({
-    loader: () => import('@/pages/Service/port'),
-    loading: ContentLoader
-});
-// example
-const PermissionTest = Loadable({
-    loader: () => import('@/pages/example/PermissionTest'),
-    loading: ContentLoader
-});
-const SearchForm = Loadable({
-    loader: () => import('@/pages/example/JsonForm/SearchForm'),
-    loading: ContentLoader
-});
-const CommonForm = Loadable({
-    loader: () => import('@/pages/example/JsonForm/CommonForm'),
-    loading: ContentLoader
-});
-const DynamicForm = Loadable({
-    loader: () => import('@/pages/example/JsonForm/DynamicForm'),
+    loader: () => import('@/pages/servManagement/port'),
     loading: ContentLoader
 });
 //key为与后端返回菜单的name相对应
 export default {
     "menu": Menu,
     "home": Home,
-    "function": Function,
-    "role": Role,
-    "rolepermission": RolePermission,
-    "roleuser": RoleUser,
-    "userrole": UserRole,
-    "user_index": User,
     "page404": Page404,
     "page403": Page403,
     "requestlog":RequestLog,
-    "department":Department,
-    "computeResource":DashBoard,
-    "servicesMon":ServerServiceList,
-    "nodesMon":NodesList,
-    "networksMon":NetworkingList,
+    "computeResource":ComputeResource,
+    "servicesMon":ServicesMon,
+    "nodesMon":NodesMon,
+    "networksMon":NetworksMon,
     "profile":UserInfo,
     "serviceIndex":ServiceIndex,
     "serviceManage":ServiceManage,
     "serviceImage":ServiceImage,
-    "servicePort":ServicePort,
-    // example
-    // "error_404": Page404,
-    // "error_403": Page403,
-    // 'permission_test': PermissionTest,
-    // "search_form": SearchForm,
-    // "common_form": CommonForm,
-    // "dynamic_form": DynamicForm
+    "servicePort":ServicePort
 }
