@@ -1,11 +1,13 @@
 import React, { PureComponent } from 'react';
 import { Table, Button, message } from 'antd';
+import { Link } from 'react-router-dom';
 import { getManageServices, deleteService, startService, stopService } from '@/services/api-product';
 const makeColumns = ({ startEvent, stopEvent, delEvent }) => [
 	{
 		title: 'ID',
 		dataIndex: 'id',
 		key: 'id',
+        render: (text, record) => <Link to={`/app/service/detail?id=${text}`}>{text}</Link>
 	},
 	{
 		title: '服务名',

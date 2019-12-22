@@ -45,6 +45,10 @@ const ServiceIndex = Loadable({
     loader: () => import('@/pages/servManagement/index'),
     loading: ContentLoader
 });
+const ServiceDetail = Loadable({
+    loader: () => import('@/pages/servManagement/detail'),
+    loading: ContentLoader
+});
 const ServiceManage = Loadable({
     loader: () => import('@/pages/servManagement/manage'),
     loading: ContentLoader
@@ -70,6 +74,7 @@ export default {
     "networksMon":NetworksMon,
     "profile":UserInfo,
     "serviceIndex":ServiceIndex,
+    "serviceDetail":ServiceDetail,
     "serviceManage":ServiceManage,
     "serviceImage":ServiceImage,
     "servicePort":ServicePort

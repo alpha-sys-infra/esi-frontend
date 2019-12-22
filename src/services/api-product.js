@@ -113,3 +113,12 @@ export const stopService=(id)=>{
         loading: 'spin'
   });
 }
+
+export const getServiceDetail=(id)=>{
+  return request({
+        url: '/getServiceDetail',
+        method: 'post',
+        data:{id,"op":"details"},
+        loading: 'spin'
+  });
+}

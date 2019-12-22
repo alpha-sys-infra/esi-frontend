@@ -135,3 +135,17 @@ export function formatDateTime(inputTime) {
     second = second < 10 ? ('0' + second) : second;
     return y + '-' + m + '-' + d + ' ' + h + ':' + minute + ':' + second;
 };
+
+export function getUrlQueryString(name,url) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex  = new RegExp("[\\?&]" + name + "=([^&#]*)");
+    var results = regex.exec(url);
+    var encoded;
+
+    if (results === null) {
+        return null;
+    } else {
+        encoded = results[1].replace(/\+/g, " ");
+        return decodeURIComponent(encoded);
+    }
+}
