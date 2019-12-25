@@ -12,6 +12,7 @@ export default {
     serviceManage:"/app/service/manage",
     serviceImage:"/app/service/image",
     servicePort:"/app/service/port",
+    platformServiceType:'/app/services/platform',
     requestlog: "/app/requestlog",
     // example
     error_404: '/app/example/404',

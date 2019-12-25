@@ -61,6 +61,10 @@ const ServicePort = Loadable({
     loader: () => import('@/pages/servManagement/port'),
     loading: ContentLoader
 });
+const PlatformServiceType = Loadable({
+    loader: () => import('@/pages/sysManagement/interConnections/platformServiceType/index'),
+    loading: ContentLoader
+});
 //key为与后端返回菜单的name相对应
 export default {
     "menu": Menu,
@@ -77,5 +81,6 @@ export default {
     "serviceDetail":ServiceDetail,
     "serviceManage":ServiceManage,
     "serviceImage":ServiceImage,
-    "servicePort":ServicePort
+    "servicePort":ServicePort,
+    "platformServiceType":PlatformServiceType,
 }

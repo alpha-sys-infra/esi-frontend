@@ -122,3 +122,11 @@ export const getServiceDetail=(id)=>{
         loading: 'spin'
   });
 }
+
+export const getMultiplatServices = ()=>{
+  return request({
+        url: '/multiplatServices',
+        method: 'get',
+        loading: 'spin'
+  });
+}
