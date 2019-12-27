@@ -130,3 +130,11 @@ export const getMultiplatServices = ()=>{
         loading: 'spin'
   });
 }
+
+export const getCreateServices = ()=>{
+  return request({
+        url: '/getCreateServices',
+        method: 'get',
+        loading: 'spin'
+  });
+}

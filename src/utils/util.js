@@ -149,3 +149,30 @@ export function getUrlQueryString(name,url) {
         return decodeURIComponent(encoded);
     }
 }
+
+export function getUrlQueryObject(urlSearch) {
+    let searchObj = {},
+        searchStr = window.location.search;
+    if (searchStr === "") return searchObj;
+    searchStr = urlSearch || searchStr.slice(1);
+    let searchList= searchStr.split("&");
+    let searchItemSplit;
+    searchList.forEach(item => {
+        searchItemSplit = item.split("=");
+        searchObj[searchItemSplit[0]] = searchItemSplit[1];
+    });
+    return searchObj;
+}
+
+const nativeToString = Object.prototype.toString;
+export function getType(any){
+    return nativeToString.call(any).slice(8, -1);
+}
+
+export function isFun(fun) {
+    return typeof fun === "function";
+}
+
+export function executeCB(cbfn, ...nextArgs) {
+    return isFun(cbfn) ? cbfn.apply(null, nextArgs) : null;
+}

@@ -65,6 +65,10 @@ const PlatformServiceType = Loadable({
     loader: () => import('@/pages/sysManagement/interConnections/platformServiceType/index'),
     loading: ContentLoader
 });
+const CreateService = Loadable({
+    loader: () => import('@/pages/servManagement/createService'),
+    loading: ContentLoader
+});
 //key为与后端返回菜单的name相对应
 export default {
     "menu": Menu,
@@ -83,4 +87,5 @@ export default {
     "serviceImage":ServiceImage,
     "servicePort":ServicePort,
     "platformServiceType":PlatformServiceType,
+    "serviceCreate":CreateService,
 }
