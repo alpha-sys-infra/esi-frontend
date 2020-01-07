@@ -1,1 +1,21 @@
+# dependencies
 /node_modules
+
+# production
+/build
+/dist
+/.vscode
+
+# yarn lock
+yarn.lock
+
+# editor
+.history
+*.log
+.idea
+.vscode
+.temp/**
+.gradle
+
+# local test
+/__tests__
