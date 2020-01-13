@@ -69,6 +69,11 @@ const CreateService = Loadable({
     loader: () => import('@/pages/servManagement/createService'),
     loading: ContentLoader
 });
+// 流程管理
+const TodoProcManage = Loadable({
+    loader: () => import('@/pages/procManagement/todo-proc'),
+    loading: ContentLoader
+});
 //key为与后端返回菜单的name相对应
 export default {
     "menu": Menu,
@@ -88,4 +93,5 @@ export default {
     "servicePort":ServicePort,
     "platformServiceType":PlatformServiceType,
     "serviceCreate":CreateService,
+    'todoProcManage':TodoProcManage,
 }

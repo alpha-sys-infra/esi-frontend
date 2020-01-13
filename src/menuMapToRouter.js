@@ -18,6 +18,12 @@ export default {
     // example
     error_404: '/app/example/404',
     error_403: '/app/example/403',
+
+    // 流程模块
+    todoProcManage:'/app/proc/todo',
+    newProcManage:'/app/proc/new',
+    myProcManage:'/app/proc/me',
+    doneProcManage:'/app/proc/done'
 }
 
 

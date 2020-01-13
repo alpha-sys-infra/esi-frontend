@@ -1,3 +1,5 @@
+import { message } from 'antd'
+
 let util = {
 
 };
@@ -136,9 +138,9 @@ export function formatDateTime(inputTime) {
     return y + '-' + m + '-' + d + ' ' + h + ':' + minute + ':' + second;
 };
 
-export function getUrlQueryString(name,url) {
+export function getUrlQueryString(name, url) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex  = new RegExp("[\\?&]" + name + "=([^&#]*)");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
     var results = regex.exec(url);
     var encoded;
 
@@ -155,7 +157,7 @@ export function getUrlQueryObject(urlSearch) {
         searchStr = window.location.search;
     if (searchStr === "") return searchObj;
     searchStr = urlSearch || searchStr.slice(1);
-    let searchList= searchStr.split("&");
+    let searchList = searchStr.split("&");
     let searchItemSplit;
     searchList.forEach(item => {
         searchItemSplit = item.split("=");
@@ -165,7 +167,7 @@ export function getUrlQueryObject(urlSearch) {
 }
 
 const nativeToString = Object.prototype.toString;
-export function getType(any){
+export function getType(any) {
     return nativeToString.call(any).slice(8, -1);
 }
 
@@ -175,4 +177,39 @@ export function isFun(fun) {
 
 export function executeCB(cbfn, ...nextArgs) {
     return isFun(cbfn) ? cbfn.apply(null, nextArgs) : null;
+}
+
+export function responseCode(code) {
+    switch (Number(code)) {
+        case 400:
+            message.error('非常抱歉，错误请求！')
+            break
+        case 401:
+            message.error('非常抱歉，未经授权！')
+            break
+        case 403:
+            message.error('非常抱歉，拒绝访问！')
+            break
+        case 404:
+            message.error('非常抱歉，"Not Found"！')
+            break
+        case 500:
+            message.error('非常抱歉，服务器出错了！')
+            break
+        case 502:
+            message.error('非常抱歉，"Bad Gateway"！')
+            break
+        case 503:
+            message.error('非常抱歉，"Service Unavailable"！')
+            break
+        case 504:
+            message.error('非常抱歉，"Gateway Timeout"！')
+            break
+        case 505:
+            message.error('非常抱歉，"HTTP Version Not Supported"！')
+            break
+        default:
+            message.error('您遇到了一个未知错误，必要情况下请联系管理员！')
+            console.error(code)
+    }
 }
